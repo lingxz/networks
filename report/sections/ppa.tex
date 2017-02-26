@@ -1,0 +1,120 @@
+%!TEX root = ../main.tex
+\section{Pure preferential attachment}\label{section:pure-preferential-attachment}
+
+\subsection{Degree distribution}\label{subsection:ppa-degree-distribution}
+The master equation that describes the evolution of the BA model is given by
+
+\begin{equation}
+	n(k, t+1) = n(k, t) + m \Pi(k-1, t)n(k-1, t) - m \Pi(k, t)n(k, t) + \delta_{k,m}
+	\label{eq:master}
+\end{equation}
+where $k$ is the total degree of a vertex, $n(k, t)$ is the number of nodes at time $t$ with total degree $k$, and the probability $\Pi$ for choosing the existing vertex depends on the model. 
+
+In the pure preferential attachment model, we choose an existing edge with $\Pi_{pa} \propto k$, which after normalizing gives $\Pi_{pa} = k/ 2E(t)$ where $E(t)$ is the number of edges and $2E(t)$ is the normalization constant corresponding to the total degree of the network. Assuming $E(0) = mN(0)$, the number of edges at a given time $t$ is given by $E(t) = mN(t)$, so we get $\Pi = k / 2mnN(t)$. Since we are concerned with the degree distribution of the model at large $t$, we consider the long-time ansatz $n(k, t) \rightarrow N(t) p_{\infty}(k)$. 
+
+Substituting these terms into the master equation, we obtain 
+\begin{equation}
+	p_{\infty}(k) = \frac{1}{2}[(k-1)p_{\infty}(k-1) - kp_{infty}(k)] + \delta_{k,m}
+	\label{eq:degree-distribution-p-infinity}
+\end{equation}
+
+It is clear that $p_{\infty}(k < m) = 0$, since $m$ edges are added at every stage. So there are 2 cases to consider when solving for the above equation: $k = m$ and $k > m$. 
+
+We first consider the case when $k > m$. In this case, $\delta_{k,m} = 0$ and we can rearrange \autoref{eq:degree-distribution-p-infinity} to get
+
+\begin{equation}
+	\frac{p_{\infty}(k)}{p_{\infty}(k+1)} = \frac{k-1}{k+2}
+	\label{eq:p-infinity-k-greater-m}	
+\end{equation}
+
+To solve this equation, we can substitute in a trial solution of the form
+
+\begin{equation}
+	f(z) = A \frac{\Gamma(z+1+a)}{\Gamma(z+1+b)}
+	\label{eq:trial-solution}
+\end{equation}
+where $\Gamma(z)$ is the Gamma function, which is an extension of the factorial function, with its argument shifted by one, to all real and complex nnumbers except the non-positive integers. Its central property is that
+\begin{equation}
+	\Gamma(z+1) = z \Gamma(z),\,\, \Gamma(1) = 1.
+	\label{eq:gamma-function-property}
+\end{equation}
+
+Substituting the trial solution in \autoref{eq:trial-solution} gives
+\begin{equation}
+	\frac{A \Gamma(z+1+a)}{\Gamma(z+1+b)} \times \frac{\Gamma(z+b)}{A \Gamma(z+a)}
+\end{equation}
+which indeed simplifies to give $(z+a) / (z+b)$, using the the property in \autoref{eq:gamma-function-property} that $\Gamma(z+a+1) / \Gamma(z+a) = z+a$. 
+
+Substituting $a = -1$ and $b=2$, we get the solution for \autoref{eq:p-infinity-k-greater-m} in terms of $A$ and the Gamma function:
+
+\begin{equation}
+	p_{\infty}(k) = A \frac{\Gamma(k)}{\Gamma(k+3)}
+\end{equation}
+which simplifies to 
+\begin{equation}
+	p_{\infty}(k) = \frac{A}{k(k+1)(k+2)}.
+	\label{eq:p-infinity-solution-unknown-A}
+\end{equation}
+
+For the second case of $k = m$, \autoref{eq:degree-distribution-p-infinity} becomes 
+\begin{equation}
+	p_{\infty}(m) = \frac{1}{2}[(m+1)p_{\infty}(m-1) - mp_{\infty}(m)] + 1. 
+	\label{eq:p-infinity-k-equals-m}
+\end{equation}
+However, we already know that $p_{\infty}(k < m) = 0$, that is, $p_{\infty}(m-1) = 0$. Using this, and rearranging \autoref{eq:p-infinity-k-equals-m}, we get 
+
+\begin{equation}
+	p_{\infty}(m) = \frac{2}{m+2}.
+	\label{p-infinity-normalization}
+\end{equation}
+
+Substituting $k = m$ and \autoref{p-infinity-normalization} into \autoref{eq:p-infinity-solution-unknown-A}, we get 
+
+\begin{equation}
+	\frac{A}{m(m+1)(m+2)} = \frac{2}{m+2}, 
+\end{equation}
+giving us the constant $A$ as
+\begin{equation}
+	A = 2m(m+1).
+	\label{eq:normalization-constant}
+\end{equation}
+
+For this constant to be physically reasonable, we need to check that the probability satisfies normalization, that is, we need to prove
+\begin{equation}
+	\sum_{k=m}^\infty p_{\infty}(k) = 2m(m+1)\sum_{k=m}^\infty \frac{1}{k(k+1)(k+2)} = 1. 
+	\label{eq:normalization-criteria}
+\end{equation}
+
+The term in the summation of \autoref{eq:normalization-criteria} can be expanded as a partial fraction:
+\begin{equation}
+	\sum_{k=m}^\infty \frac{1}{k(k+1)(k+2)} = \sum_{k=m}^\infty \frac{1}{2k} - \sum_{k=m}^\infty \frac{1}{k+1} + \sum_{k=m}^\infty \frac{1}{2(k+2)}
+	\label{eq:partial-fractions}
+\end{equation}
+
+By writing out the first few terms of each summation, we can see that most terms cancel:
+
+\begin{equation}
+\setlength{\arraycolsep}{0pt}% no padding
+\newcolumntype{B}{>{{}}c<{{}}}
+\begin{array}{ B l B l B l B l B l B}
+	\frac{1}{2m} & {}-{} &\frac{1}{m+1} & {}+{} & \cancel{\frac{1}{2(m+2)}} & \\
+	& {}+{} & \frac{1}{2(m+1)} & {}-{} &\cancel{\frac{1}{m+2}} & {}+{} &\cancel{\frac{1}{m+3}} \\
+	& & & {}+{} & \cancel{\frac{1}{2(m+2)}} & {}-{} & \cancel{\frac{1}{m+3}} & {}+{} &\frac{1}{2(m+4)} \\
+	& & & & & {}+{}& \cancel{\frac{1}{2(m+3)}} & {}-{} & \frac{1}{m+4} & {}+{} & \frac{1}{2(m+5)} \\
+	& & & & & & & {}+{}& ...\\
+\end{array}
+\label{eq:summation-cancel}
+\end{equation}
+and from the remaining terms we get the relation in \autoref{eq:normalization-criteria}
+\begin{equation}
+	 \sum_{k=m}^\infty p_{\infty}(k) = 2m(m+1)\left ( \frac{1}{2m} - \frac{1}{m} + \frac{1}{2(m+1)} \right ) = 2m(m+1) \frac{1}{2m(m+1)} = 1
+	 \label{eq:normalization-satisfied}
+\end{equation}
+
+Hence, we can confirm that the complete exact solution for the probability distribution in the long time limit is 
+\begin{equation}
+	p_{\infty}(k) = \frac{2m(m+1)}{k(k+1)(k+2)}.
+	\label{eq:p-infinity-solution}
+\end{equation}
+
+\subsection{Numerical analysis}\label{subsection:ppa-numerical-analysis}

@@ -1,0 +1,22 @@
+%!TEX root = ../main.tex
+\section{Pure random attachment}\label{section:pure-random-attachment}
+
+The pure random attachment model can be seen as a limiting case of the BA model. In this model, all existing vertices are chosen with equal probability, i.e. $\Pi = \Pi_{rnd} \propto 1$. This preserves growth but removes preferential attachment. 
+
+Similar to the previous section, we start from the master equation in \autoref{eq:master}, and instead of $\Pi = k/ 2E(t)$ as in preferential attachment, we use $\Pi_{rnd} = 1 / N(t)$. Again, we consider the long-time ansatz $n(k, t) \rightarrow N(t) p_{\infty}(k)$. Substituting these terms into \autoref{eq:master}, we have
+
+\begin{equation}
+	p_{\infty}(k) = m p_{\infty}(k-1) - m p_{\infty}(k) + \delta_{k, m} 
+	\label{eq:pra-degree-distribution-p-infinity}
+\end{equation}
+
+Considering the case of $k > m$, we obtain the recurrence relation
+\begin{equation}
+	\frac{p_{\infty}(k)}{p_{\infty}(k-1)} = \frac{m}{m+1}
+\end{equation} 
+
+
+
+The resulting degree distribution in this limit is geometric, indicating that growth alone is not sufficient to produce a scale free structure. 
+
+Numerical simulations confirmed that growth alone is not sufficient to produce a scale free structure. 
