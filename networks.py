@@ -1,69 +1,85 @@
 import networkx as nx
 import random
+import pickle as pk
 
 class BAGraph(nx.Graph):
 
     def __init__(self, m, N):
-        super().__init__()
+        if m < 1 or m >= N:
+            raise nx.NetworkXError("Barabási–Albert network must have m >= 1"
+                                   " and m < n, m = %d, n = %d" % (m, N))
+        # start with m initial nodes
+        super().__init__(data=nx.empty_graph(m))
         self.m = m
         self.N = N
+        self.targets = self.nodes()
+        self.repeated_nodes = []
+        self.increment()
 
-        # start with 2 nodes and one edge connecting them
-        self.add_nodes_from([0, 1])
-        self.add_edge(0, 1)
+    def set_targets(self, m):
+        # pick uniformly from repeated_nodes (preferential attachment
+        self.targets = BAGraph._random_subset(self.repeated_nodes, m)
 
-    def add_next_node(self):
-        node = max(self.nodes()) + 1
-        self.add_node(node)
-        return node
+    def increment(self):
+        current = self.m
+        while current < self.N:
+            self.add_edges_from(zip([current] * self.m, self.targets))
+            # Add one node to the list for each new edge just created.
+            self.repeated_nodes.extend(self.targets)
+            # And the new node "current" has m edges to add to the list.
+            self.repeated_nodes.extend([current] * self.m)
+            # Now choose m unique nodes from the existing nodes
+            self.set_targets(self.m)
+            current += 1
 
-    def _check_all_connected(self, node):
-        nbs = self.neighbors(node)
-        not_connected = set(self.nodes()) - set(nbs)
-        if len(not_connected) == 1 and list(not_connected)[0] == node:
-            return True
+    def save_to_file(self, name=None):
+        if not name:
+            fn = 'data/phase1/ba_{0}_m{1}.pkl'.format(str(self.number_of_nodes()), str(self.m))
         else:
-            return False
+            fn = 'data/phase1/{0}_{1}_m{2}.pkl'.format(str(name), str(self.number_of_nodes()), str(self.m))
+        with open(fn, 'wb') as file:
+            pk.dump(self, file)
 
-    def add_m_edges(self, m):
-        edges_added = 0
+    @staticmethod
+    def load_from_file(N, m, name=None):
+        if not name:
+            name = 'ba'
+        fn = 'data/phase1/{0}_{1}_m{2}.pkl'.format(str(name), str(N), str(m))
+        with open(fn, 'rb') as file:
+            return pk.load(file)
 
-        # check that current node is not already connected to everything
-        while edges_added < m and not self._check_all_connected(self.nodes()[-1]):
-            new_node = self.nodes()[-1]
-            existing_node = self.choose_node()
+    @staticmethod
+    def _random_subset(seq, m):
+        """ Return m unique elements from seq.
 
-            # do not add self loops
-            if new_node == existing_node:
-                continue
+        This differs from random.sample which can return repeated
+        elements if seq holds repeated elements.
+        """
+        targets = set()
+        while len(targets) < m:
+            x = random.choice(seq)
+            targets.add(x)
+        return targets
 
-            # there is already an edge between these 2 nodes
-            if new_node in self.neighbors(existing_node):
-                continue
+class RandomAttachmentGraph(BAGraph):
+    def __init__(self, m, N):
+        super().__init__(m, N)
 
-            else:
-                self.add_edge(new_node, existing_node)
-                edges_added += 1
+    def set_targets(self):
+        return
 
-    def increment(self, t, m=None):
-        if m == None:
-            m = self.m
-        for i in range(t):
-            self.add_next_node()
-            self.add_m_edges(m)
+    def save_to_file(self, name=None):
+        if not name:
+            fn = 'data/phase1/ra_{0}_m{1}.pkl'.format(str(self.number_of_nodes()), str(self.m))
+        else:
+            fn = 'data/phase1/{0}_{1}_m{2}.pkl'.format(str(name), str(self.number_of_nodes()), str(self.m))
+        with open(fn, 'wb') as file:
+            pk.dump(self, file)
 
-    def increment_till_max(self):
-        self.increment_till_n(self.N)
-
-    def increment_till_n(self, n):
-        remaining = n - len(self.nodes())
-        if remaining < 0:
-            raise ValueError("You are already past the max number of nodes!")
-        self.increment(remaining)
-
-    def choose_node(self):
-        end = len(self.edges()) - 1
-        index = random.randint(0, end)
-        edge = self.edges()[index]
-        node = edge[0] if random.random() < 0.5 else edge[1]
-        return node
+    @staticmethod
+    def load_from_file(N, m, name=None):
+        if not name:
+            name = 'ra'
+        fn = 'data/phase1/{0}_{1}_m{2}.pkl'.format(str(name), str(N), str(m))
+        with open(fn, 'rb') as file:
+            return pk.load(file)
