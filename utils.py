@@ -1,20 +1,29 @@
 import log_bin
 import pandas as pd
 import matplotlib.pyplot as plt
+import numpy as np
 
-def log_bin_and_plot(df, a=1.7, font_size=10):
+def log_bin_and_plot(df, a=1.7, font_size=10, **kwargs):
     log_binned_df = pd.DataFrame()
 
-    for col in df:
-        x, y = log_bin.log_bin(df[col].dropna()[df[col] != 0], a=a, datatype='integer')
+    for i, col in enumerate(df):
+        if isinstance(a, list):
+            factor = a[i]
+        elif isinstance(a, (int, float)):
+            factor = a
+        else:
+            raise ValueError("a must be integer, float, or list!")
+        x, y = log_bin.log_bin(df[col].dropna()[df[col] != 0], a=factor, datatype='integer')
         additional = pd.DataFrame({str(col) + " (log binned)": y}, index=x)
         log_binned_df = pd.concat([log_binned_df, additional], axis=1)
-
     ax = plt.figure().gca()
     for col in log_binned_df:
         column = log_binned_df[col]
         # drop zeros before plotting
-        column[column != 0].plot(style='--', ax=ax, loglog=True)
+        if kwargs:
+            column[column != 0].dropna().plot(**kwargs, ax=ax)
+        else:
+            column[column != 0].dropna().plot(style='--', ax=ax, loglog=True)
     ax.set_ylabel(u'$P(k)$', fontsize=font_size)
     ax.set_xlabel(u'$k$', fontsize=font_size)
     return log_binned_df
@@ -39,3 +48,11 @@ def drop_zeros_and_plot(df, **kwargs):
             column[column != 0].plot(**kwargs)
         else:
             column[column != 0].plot()
+
+def deg_dist_theory(m, k):
+    return 2 * m * (m + 1) / (k * (k + 1) * (k + 2))
+
+def deg_dist_cumulative(m, ks):
+    y = deg_dist_theory(m, ks)
+    return np.cumsum(y[::-1])[::-1]
+    # return y
