@@ -52,19 +52,24 @@ def drop_zeros_and_plot(df, **kwargs):
 def deg_dist_theory(m, k):
     return 2 * m * (m + 1) / (k * (k + 1) * (k + 2))
 
+def deg_dist_ra_theory(m, k):
+    return 1. / (m + 1) * ((m / (m + 1))**(k - m))
+
 def deg_dist_cumulative(m, ks):
     y = deg_dist_theory(m, ks)
     return np.cumsum(y[::-1])[::-1]
 
-def get_model_df(df, columns, mlist=None):
+def get_model_df(df, columns, model=deg_dist_theory, mlist=None, index=True):
     if mlist is None:
         mlist = columns
     new_df = pd.DataFrame()
     for c, m in zip(columns, mlist):
-        min, max = df[c].dropna().index.min(), df[c].dropna().index.max()
-        # ks = np.linspace(min, max, num=1000)
-        ks = df.index
-        p = deg_dist_theory(m, ks)
+        if index:
+            ks = df.index.values
+        else:
+            min, max = df[c].dropna().index.min(), df[c].dropna().index.max()
+            ks = np.linspace(min, max, num=1000)
+        p = model(m, ks)
         additional = pd.DataFrame(p, index=ks, columns=[m])
         new_df = pd.concat([new_df, additional], axis=1)
     return new_df
