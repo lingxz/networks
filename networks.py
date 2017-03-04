@@ -3,8 +3,9 @@ import random
 import pickle as pk
 import json
 import os
+import numpy as np
 
-# this should not be instantiated directly
+# abstract base class, this should not be instantiated directly
 class BaseBAGraph(nx.Graph):
 
     prefix = 'base'
@@ -116,8 +117,36 @@ class RAGraph(BaseBAGraph):
     prefix = 'ra'
 
     def __init__(self, m, N):
-        super().__init__(m, N)
+        super().__init__(m, N, data=nx.empty_graph(m))
         self.targets = self.nodes()
+        self.increment()
 
-    def _set_targets(self):
+    def _set_targets(self, current):
         self.targets = random.sample(self.nodes(), self.m)
+
+class RWGraph(BaseBAGraph):
+
+    """
+    Random walks and preferential attachment
+    """
+
+    prefix = 'rw'
+
+    def __init__(self, m, N, L):
+        # L is the random walk length
+        super().__init__(m, N, data=nx.empty_graph(m))
+        self.targets = self.nodes()
+        self.L = L
+        self.increment()
+
+    def _set_targets(self, current):
+        L = self.L
+        m = self.m
+        targets = set()
+        while len(targets) < m:
+            start = random.choice(self.nodes())
+            v = start
+            for step in range(L):
+                v = random.choice(self.neighbours(v))
+            targets.add(v)
+        self.targets = list(targets)
