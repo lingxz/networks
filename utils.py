@@ -14,7 +14,7 @@ def log_bin_and_plot(df, a=1.7, font_size=10, **kwargs):
         else:
             raise ValueError("a must be integer, float, or list!")
         x, y = log_bin.log_bin(df[col].dropna()[df[col] != 0], a=factor, datatype='integer')
-        additional = pd.DataFrame({str(col) + " (log binned)": y}, index=x)
+        additional = pd.DataFrame({col: y}, index=x)
         log_binned_df = pd.concat([log_binned_df, additional], axis=1)
     ax = plt.figure().gca()
     for col in log_binned_df:
@@ -55,4 +55,16 @@ def deg_dist_theory(m, k):
 def deg_dist_cumulative(m, ks):
     y = deg_dist_theory(m, ks)
     return np.cumsum(y[::-1])[::-1]
-    # return y
+
+def get_model_df(df, columns, mlist=None):
+    if mlist is None:
+        mlist = columns
+    new_df = pd.DataFrame()
+    for c, m in zip(columns, mlist):
+        min, max = df[c].dropna().index.min(), df[c].dropna().index.max()
+        # ks = np.linspace(min, max, num=1000)
+        ks = df.index
+        p = deg_dist_theory(m, ks)
+        additional = pd.DataFrame(p, index=ks, columns=[m])
+        new_df = pd.concat([new_df, additional], axis=1)
+    return new_df
