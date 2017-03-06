@@ -13,6 +13,7 @@
 #include <random>
 #include <cstdlib>
 #include <time.h>
+#include <windows.h>
 #include "simplegraph/simplegraph.cpp"
 #include "simplegraph/simplegraph.h"
 
@@ -118,8 +119,41 @@ void run_ba_diff_m() {
     }
 }
 
+void run_ba_diff_n(int m, string s) {
+    const string directory = "../../data/ba/deg_dist" + s + '/';
+    //Make the directory if it doesn't exist
+    string s1 = "mkdir ";
+    string s2 = "../../data/ba/deg_dist";
+    system((s1 + s2 + s).c_str());
+    int n_array[6] = {100, 1000, 10000, 100000, 1000000, 10000000};
+    for (int i = 0; i < 6; i++) {
+        simplegraph g = BAGraph(n_array[i], m);
+
+        // get file path
+        std::ostringstream oss;
+        oss << directory << n_array[i] << "_" << m << ".txt";
+
+        ofstream file (oss.str());
+        for (int v=0; v < g.getNumberVertices(); v++) {
+            int degree = g.getVertexDegree(v);
+            if (v == g.getNumberVertices()-1) {
+                file << degree;
+            }
+            else {
+                file << degree << ",";
+            }
+        }
+        file.close();
+    }
+}
+
+
 int main() {
-    run_ba_diff_m();
+    for (int i=41;  i<=100; i++) {
+        string s = std::to_string(i);
+        run_ba_diff_n(4, s);
+        run_ba_diff_n(8, s);
+    }
 
 //    time_point<Clock> start = Clock::now();
 //    simplegraph g = BAGraph(100, 4);

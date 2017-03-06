@@ -37,6 +37,8 @@ cstdlib
 -
 time.h
 -
+windows.h
+-
 simplegraph/simplegraph.cpp
 /cygdrive/d/GIT/networks/cpp2/simplegraph/simplegraph.cpp
 simplegraph/simplegraph.h

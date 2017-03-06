@@ -38,7 +38,7 @@ class BaseBAGraph(nx.Graph):
             folder = "degree_distribution"
         folder_path = "data/{0}/{1}".format(root_folder, folder)
         os.makedirs(folder_path, exist_ok=True)
-        fn = folder_path + '/{0}_{1}_m{2}.json'.format(str(name), str(self.number_of_nodes()), str(self.m))
+        fn = folder_path + '/{0}_{1}.json'.format(str(self.number_of_nodes()), str(self.m))
         with open(fn, 'w') as f:
             json.dump(self.degree(), f)
 
@@ -52,7 +52,7 @@ class BaseBAGraph(nx.Graph):
         if not folder:
             folder = "degree_distribution"
         folder_path = "data/{0}/{1}".format(root_folder, folder)
-        fn = folder_path + '/{0}_{1}_m{2}.json'.format(str(name), str(N), str(m))
+        fn = folder_path + '/{0}_{1}.json'.format(str(N), str(m))
         with open(fn, 'r') as f:
             return json.load(f)
 
@@ -101,6 +101,20 @@ class BAGraph(BaseBAGraph):
         self.targets = self.nodes()
         self.repeated_nodes = []
         self.increment()
+
+    def increment(self):
+        # M = np.zeros(2 * self.N * self.m)
+        M = [None]*(2*self.N*self.m)
+        for current in range(self.N):
+            for i in range(self.m):
+                m_index = 2* (current * self.m + i)
+                M[m_index] = current
+                r = random.randint(0, 2*(current*self.m + i))
+                M[m_index+1] = M[r]
+
+        for i in range(self.N * self.m):
+            self.add_edge(M[2*i], M[2*i+1])
+
 
     def _set_targets(self, current):
         m = self.m
