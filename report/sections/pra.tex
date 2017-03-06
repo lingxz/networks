@@ -1,22 +1,55 @@
 %!TEX root = ../main.tex
 \section{Pure random attachment}\label{section:pure-random-attachment}
 
+\subsection{Degree distribution}
+\subsubsection{Theory}
 The pure random attachment model can be seen as a limiting case of the BA model. In this model, all existing vertices are chosen with equal probability, i.e. $\Pi = \Pi_{rnd} \propto 1$. This preserves growth but removes preferential attachment. 
 
 Similar to the previous section, we start from the master equation in \autoref{eq:master}, and instead of $\Pi = k/ 2E(t)$ as in preferential attachment, we use $\Pi_{rnd} = 1 / N(t)$. Again, we consider the long-time ansatz $n(k, t) \rightarrow N(t) p_{\infty}(k)$. Substituting these terms into \autoref{eq:master}, we have
 
 \begin{equation}
-	p_{\infty}(k) = m p_{\infty}(k-1) - m p_{\infty}(k) + \delta_{k, m} 
-	\label{eq:pra-degree-distribution-p-infinity}
+	p_{\infty}(k) = m p_{\infty}(k-1) - m p_{\infty}(k) + \delta_{k, m}. 
+	\label{eq:ra-degree-distribution-p-infinity}
 \end{equation}
 
 Considering the case of $k > m$, we obtain the recurrence relation
 \begin{equation}
-	\frac{p_{\infty}(k)}{p_{\infty}(k-1)} = \frac{m}{m+1}
-\end{equation} 
+	p_{\infty}(k) = \left ( \frac{m}{m+1} \right ) p_{\infty}(k-1)=...= \left ( \frac{m}{m+1} \right )^{k-m} p_{\infty}(m)
+	\label{eq:ra-degree-recurrence-relation}
+\end{equation}
 
+Now we consider $k=m$. Substituting $k=m$ into \autoref{eq:ra-degree-distribution-p-infinity} and remembering that $p_{\infty}(k < m) = 0$, we get
+\begin{equation}
+	p_{\infty}(m) = -mp_{\infty} + 1, 
+	\label{eq:ra-degree-k-equal-m}
+\end{equation}
+giving us 
+\begin{equation}
+	p_{\infty}(m) = \frac{1}{m+1}. 
+	\label{eq:ra-degree-p-infinity-m}
+\end{equation}
 
+Combining this result with \autoref{eq:ra-degree-recurrence-relation}, we get the following formula for $p_{\infty}(k)$:
+\begin{equation}
+	p_{\infty}(k) = \frac{1}{m+1} \left ( \frac{m}{m+1}\right )^{k-m}.
+	\label{eq:p-infinity-solution-ra}
+\end{equation}
 
-The resulting degree distribution in this limit is geometric, indicating that growth alone is not sufficient to produce a scale free structure. 
+For normalization, we need to check that 
+\begin{equation}
+	\sum_{k=m}^{\infty}p_{\infty}(k) = \frac{1}{m+1} \sum_{k=m}^{\infty} \left ( \frac{m}{m+1}\right )^{k-m} = 1.
+	\label{eq:ra-check-normalization}
+\end{equation}
+The terms in the summation form a converging geometric series, with the starting term being zero and common ratio being $m / (m+1)$. Hence we have 
+\begin{equation}
+	\sum_{k=m}^{\infty} \left ( \frac{m}{m+1} \right )^{k-m} = \frac{1}{1 - [m / (m+1)]}. 
+\end{equation}
 
+By substituting this back into the \autoref{eq:ra-check-normalization}, we can see that normalization is satisfied. 
+
+As we can see from \autoref{eq:p-infinity-solution-ra}, the resulting degree distribution in this limit is geometric \citep{Pekoz2013}, indicating that growth alone is not sufficient to produce a scale free structure. 
+
+\subsubsection{Numerical analysis}\label{subsection:ra-numerical-analysis}
 Numerical simulations confirmed that growth alone is not sufficient to produce a scale free structure. 
+
+\subsection{Largest expected degree}\label{subsection:largest-expected-degree}

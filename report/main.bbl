@@ -16,5 +16,357 @@
   {}
 \endgroup
 
-\sortlist[entry]{nyt/global/}\endsortlist
+\sortlist[entry]{nyt/global/}
+  \entry{Aiello2001a}{article}{}
+    \name{author}{5}{}{%
+      {{hash=AW}{%
+         family={Aiello},
+         familyi={A\bibinitperiod},
+         given={William},
+         giveni={W\bibinitperiod},
+      }}%
+      {{hash=CF}{%
+         family={Chung},
+         familyi={C\bibinitperiod},
+         given={Fan},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=LL}{%
+         family={Lu},
+         familyi={L\bibinitperiod},
+         given={Linyuan},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=GFC}{%
+         family={Graham},
+         familyi={G\bibinitperiod},
+         given={F\bibnamedelima Chung},
+         giveni={F\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+      {{hash=LL}{%
+         family={Lu},
+         familyi={L\bibinitperiod},
+         given={Linyuan},
+         giveni={L\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{AW+1}
+    \strng{fullhash}{AWCFLLGFCLL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2001}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{abstract}{%
+    We propose a random graph model which is a special case of sparse random
+  graphs with given degree sequences which satisfy a power law. This model
+  involves only a small number of parameters, called log- size and log-log
+  growth rate. These parameters capture some universal characteristics of
+  massive graphs. Furthermore, from these parame- ters, various properties of
+  the graph can be derived. For example, for certain ranges of the parameters,
+  we will compute the expected distri- bution of the sizes of the connected
+  components which almost surely occur with high probability. We will
+  illustrate the consistency of our model with the behavior of some massive
+  graphs derived from data in telecommunications. We will also discuss the
+  threshold function, the giant component, and the evolution of random graphs
+  in this model.%
+    }
+    \verb{doi}
+    \verb 10.1080/10586458.2001.10504428
+    \endverb
+    \field{isbn}{1581131844}
+    \field{issn}{1058-6458}
+    \field{number}{1}
+    \field{pages}{53\bibrangedash 66}
+    \field{title}{{A Random Graph Model for Power Law Graphs}}
+    \verb{url}
+    \verb http://www.tandfonline.com/doi/abs/10.1080/10586458.2001.10504428
+    \endverb
+    \field{volume}{10}
+    \verb{file}
+    \verb :C$\backslash$:/Users/Lingyi/Google Drive/Mendeley/pdfs/Aiello et al.
+    \verb  - 2001 - A Random Graph Model for Power Law Graphs.pdf:pdf
+    \endverb
+    \field{journaltitle}{Experimental Mathematics}
+    \field{year}{2001}
+  \endentry
+
+  \entry{Boguna2004}{article}{}
+    \name{author}{3}{}{%
+      {{hash=BM}{%
+         family={Bogu{\~{n}}{\'{a}}},
+         familyi={B\bibinitperiod},
+         given={M.},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=PSR}{%
+         family={Pastor-Satorras},
+         familyi={P\bibinitperiod-S\bibinitperiod},
+         given={R.},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=VA}{%
+         family={Vespignani},
+         familyi={V\bibinitperiod},
+         given={A.},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BMPSRVA1}
+    \strng{fullhash}{BMPSRVA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2004}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \verb{doi}
+    \verb 10.1140/epjb/e2004-00038-8
+    \endverb
+    \verb{eprint}
+    \verb 0311650
+    \endverb
+    \field{issn}{14346028}
+    \field{number}{2}
+    \field{pages}{205\bibrangedash 209}
+    \field{title}{{Cut-offs and finite size effects in scale-free networks}}
+    \field{volume}{38}
+    \verb{file}
+    \verb :C$\backslash$:/Users/Lingyi/Google Drive/Mendeley/pdfs/Bogu{\~{n}}{\
+    \verb '{a}}, Pastor-Satorras, Vespignani - 2004 - Cut-offs and finite size
+    \verb effects in scale-free networks.pdf:pdf
+    \endverb
+    \field{journaltitle}{European Physical Journal B}
+    \field{annotation}{%
+    largest expected degree??%
+    }
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{cond-mat}
+    \field{year}{2004}
+  \endentry
+
+  \entry{Cannings2013}{article}{}
+    \name{author}{2}{}{%
+      {{hash=CC}{%
+         family={Cannings},
+         familyi={C\bibinitperiod},
+         given={Chris},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=JJ}{%
+         family={Jordan},
+         familyi={J\bibinitperiod},
+         given={Jonathan},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \keyw{Preferential attachment,Random graphs,Random walk}
+    \strng{namehash}{CCJJ1}
+    \strng{fullhash}{CCJJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2013}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{abstract}{%
+    We consider the random walk attachment graph introduced by
+  Saram$\backslash$"{\{}a{\}}ki and Kaski and proposed as a mechanism to
+  explain how behaviour similar to preferential attachment may appear requiring
+  only local knowledge. We show that if the length of the random walk is fixed
+  then the resulting graphs can have properties significantly different from
+  those of preferential attachment graphs, and in particular that in the case
+  where the random walks are of length 1 and each new vertex attaches to a
+  single existing vertex the proportion of vertices which have degree 1 tends
+  to 1, in contrast to preferential attachment models. AMS 2010 Subject
+  Classification: Primary 05C82. Key words and phrases:random graphs;
+  preferential attachment; random walk.%
+    }
+    \verb{doi}
+    \verb 10.1214/ECP.v18-2518
+    \endverb
+    \verb{eprint}
+    \verb 1303.1052
+    \endverb
+    \field{issn}{1083589X}
+    \field{pages}{1\bibrangedash 8}
+    \field{title}{{Random walk attachment graphs}}
+    \field{volume}{18}
+    \verb{file}
+    \verb :C$\backslash$:/Users/Lingyi/Google Drive/Mendeley/pdfs/Cannings, Jor
+    \verb dan - 2013 - Random walk attachment graphs.pdf:pdf
+    \endverb
+    \field{journaltitle}{Electronic Communications in Probability}
+    \field{annotation}{%
+    Random walks and preferential attachment%
+    }
+    \field{eprinttype}{arXiv}
+    \field{year}{2013}
+  \endentry
+
+  \entry{J.P.Saramaki2004}{article}{}
+    \name{author}{2}{}{%
+      {{hash=J}{%
+         family={J.P.Saramaki},
+         familyi={J\bibinitperiod},
+      }}%
+      {{hash=T}{%
+         family={T.S.Evans},
+         familyi={T\bibinitperiod},
+      }}%
+    }
+    \keyw{Statistical Mechanics}
+    \strng{namehash}{JT1}
+    \strng{fullhash}{JT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2004}
+    \field{sortinit}{J}
+    \field{sortinithash}{J}
+    \field{abstract}{%
+    We show how scale-free degree distributions can emerge naturally from
+  growing$\backslash$nnetworks by using random walks for selecting vertices for
+  attachment. This$\backslash$nresult holds for several variants of the walk
+  algorithm and for a wide range of$\backslash$nparameters. The growth
+  mechanism is based on using local graph information$\backslash$nonly, so this
+  is a process of self-organisation. The standard
+  mean-field$\backslash$nequations are an excellent approximation for network
+  growth using these rules.$\backslash$nWe discuss the effects of finite size
+  on the degree distribution, and compare$\backslash$nanalytical results to
+  simulated networks. Finally, we generalise the random$\backslash$nwalk
+  algorithm to produce weighted networks with power-law distributions
+  of$\backslash$nboth weight and degree.%
+    }
+    \verb{doi}
+    \verb 10.1103/PhysRevE.72.026138
+    \endverb
+    \verb{eprint}
+    \verb 0411390v2
+    \endverb
+    \field{issn}{1539-3755}
+    \field{number}{2}
+    \field{pages}{1\bibrangedash 33}
+    \field{title}{{Scale Free Networks from Self-Organisation}}
+    \verb{url}
+    \verb http://link.aps.org/doi/10.1103/PhysRevE.72.026138
+    \endverb
+    \field{volume}{72}
+    \field{journaltitle}{Physical Review E}
+    \field{annotation}{%
+    random walk%
+    }
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{cond-mat}
+    \field{year}{2004}
+  \endentry
+
+  \entry{Pekoz2013}{article}{}
+    \name{author}{3}{}{%
+      {{hash=PEA}{%
+         family={Pek{\"{o}}z},
+         familyi={P\bibinitperiod},
+         given={Erol\bibnamedelima A.},
+         giveni={E\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=RA}{%
+         family={R{\"{o}}llin},
+         familyi={R\bibinitperiod},
+         given={Adrian},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=RN}{%
+         family={Ross},
+         familyi={R\bibinitperiod},
+         given={Nathan},
+         giveni={N\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{PEARARN1}
+    \strng{fullhash}{PEARARN1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2013}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \field{abstract}{%
+    We develop a new formulation of Stein's method to obtain computable upper
+  bounds on the total variation distance between the geometric distribution and
+  a distribution of interest. Our framework reduces the problem to the
+  construction of a coupling between the original distribution and the
+  “discrete equilibrium” distribution from renewal theory. We illustrate
+  the approach in four non-trivial examples: the geometric sum of independent,
+  non-negative, integer-valued random variables having common mean, the
+  generation size of the critical Galton–Watson process conditioned on
+  non-extinction, the in-degree of a randomly chosen node in the uniform
+  attachment random graph model and the total degree of both a fixed and
+  randomly chosen node in the preferential attachment random graph model.%
+    }
+    \verb{doi}
+    \verb 10.3150/11-BEJ406
+    \endverb
+    \field{issn}{1350-7265}
+    \field{number}{2}
+    \field{pages}{610\bibrangedash 632}
+    \field{title}{{Total variation error bounds for geometric approximation}}
+    \verb{url}
+    \verb http://projecteuclid.org/euclid.bj/1363192040
+    \endverb
+    \field{volume}{19}
+    \field{journaltitle}{Bernoulli}
+    \field{year}{2013}
+  \endentry
+
+  \entry{Saramaki2004}{article}{}
+    \name{author}{2}{}{%
+      {{hash=SJ}{%
+         family={Saram{\"{a}}ki},
+         familyi={S\bibinitperiod},
+         given={Jari},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=KK}{%
+         family={Kaski},
+         familyi={K\bibinitperiod},
+         given={Kimmo},
+         giveni={K\bibinitperiod},
+      }}%
+    }
+    \keyw{Disordered system,Networks,Random walks,Scale-free networks}
+    \strng{namehash}{SJKK1}
+    \strng{fullhash}{SJKK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2004}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{abstract}{%
+    We present a simple mechanism for generating undirected scale-free networks
+  using random walkers, where the network growth is determined by choosing
+  parent vertices by sequential random walks. We show that this mechanism
+  produces scale-free networks with degree exponent $\gamma$=3 and clustering
+  coefficients depending on random walk length. The mechanism can be
+  interpreted in terms of preferential attachment without explicit knowledge of
+  node degrees. {\textcopyright} 2004 Elsevier B.V. All rights reserved.%
+    }
+    \verb{doi}
+    \verb 10.1016/j.physa.2004.04.110
+    \endverb
+    \verb{eprint}
+    \verb 0404088
+    \endverb
+    \field{isbn}{0378-4371}
+    \field{issn}{03784371}
+    \field{number}{1-4}
+    \field{pages}{80\bibrangedash 86}
+    \field{title}{{Scale-free networks generated by random walkers}}
+    \field{volume}{341}
+    \verb{file}
+    \verb :C$\backslash$:/Users/Lingyi/Google Drive/Mendeley/pdfs/Saram{\"{a}}k
+    \verb i, Kaski - 2004 - Scale-free networks generated by random walkers.pdf
+    \verb :pdf
+    \endverb
+    \field{journaltitle}{Physica A: Statistical Mechanics and its Applications}
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{cond-mat}
+    \field{year}{2004}
+  \endentry
+\endsortlist
 \endinput

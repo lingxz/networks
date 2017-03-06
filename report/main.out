@@ -1,1 +1,15 @@
-\BOOKMARK [1][-]{section.1}{Theory}{}% 1
+\BOOKMARK [1][-]{section.1}{Pure preferential attachment}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{Degree distribution}{section.1}% 2
+\BOOKMARK [3][-]{subsubsection.1.1.1}{Theory}{subsection.1.1}% 3
+\BOOKMARK [3][-]{subsubsection.1.1.2}{Numerical analysis}{subsection.1.1}% 4
+\BOOKMARK [2][-]{subsection.1.2}{Largest expected degree}{section.1}% 5
+\BOOKMARK [3][-]{subsubsection.1.2.1}{Theory}{subsection.1.2}% 6
+\BOOKMARK [3][-]{subsubsection.1.2.2}{Numerical analysis}{subsection.1.2}% 7
+\BOOKMARK [1][-]{section.2}{Pure random attachment}{}% 8
+\BOOKMARK [2][-]{subsection.2.1}{Degree distribution}{section.2}% 9
+\BOOKMARK [3][-]{subsubsection.2.1.1}{Theory}{subsection.2.1}% 10
+\BOOKMARK [3][-]{subsubsection.2.1.2}{Numerical analysis}{subsection.2.1}% 11
+\BOOKMARK [2][-]{subsection.2.2}{Largest expected degree}{section.2}% 12
+\BOOKMARK [1][-]{section.3}{Random walks and preferential attachment}{}% 13
+\BOOKMARK [2][-]{subsection.3.1}{Theoretical degree distribution}{section.3}% 14
+\BOOKMARK [1][-]{section*.1}{References}{}% 15
