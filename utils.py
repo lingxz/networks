@@ -158,9 +158,9 @@ def log_bin_freq_and_plot(df, a=1.7, font_size=10, **kwargs):
         column = log_binned_df[col]
         # drop zeros before plotting
         if kwargs:
-            column[column != 0].dropna().plot(**kwargs, ax=ax)
+            column[column != 0].dropna().plot(**kwargs, ax=ax, fontsize=font_size)
         else:
-            column[column != 0].dropna().plot(style='--', ax=ax, loglog=True)
+            column[column != 0].dropna().plot(style='--', ax=ax, loglog=True, fontsize=font_size)
     ax.set_ylabel(u'$P(k)$', fontsize=font_size)
     ax.set_xlabel(u'$k$', fontsize=font_size)
     return log_binned_df
