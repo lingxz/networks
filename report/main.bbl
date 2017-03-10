@@ -202,6 +202,46 @@
     \field{year}{2013}
   \endentry
 
+  \entry{Christensen:2005}{book}{}
+    \name{author}{1}{}{%
+      {{hash=CKa}{%
+         family={Christensen},
+         familyi={C\bibinitperiod},
+         given={Kim\bibnamedelima [author]},
+         giveni={K\bibinitperiod\bibinitdelim a\bibinitperiod},
+      }}%
+    }
+    \name{editor}{1}{}{%
+      {{hash=MNR}{%
+         family={Moloney},
+         familyi={M\bibinitperiod},
+         given={Nicholas\bibnamedelima R},
+         giveni={N\bibinitperiod\bibinitdelim R\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Imperial College Press}%
+    }
+    \keyw{Biocomplexity.,Critical phenomena (Physics),Ising model.,PBWR:
+  Non-linear science,Percolation (Statistical physics),Scaling laws
+  (Statistical physics),Technological complexity.}
+    \strng{namehash}{CKa1}
+    \strng{fullhash}{CKa1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{isbn}{ISBN: 1860945171}
+    \field{series}{Imperial College Press advanced physics texts volume 1}
+    \field{title}{{Complexity and criticality}}
+    \list{location}{1}{%
+      {London}%
+    }
+    \field{annotation}{%
+    Includes bibliography and index.%
+    }
+  \endentry
+
   \entry{Clauset2009}{article}{}
     \name{author}{3}{}{%
       {{hash=CA}{%

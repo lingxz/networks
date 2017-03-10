@@ -185,11 +185,11 @@ INPUT c:/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT c:/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT c:/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT c:/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmtt12.tfm
-INPUT sections/pra.tex
-INPUT sections/pra.tex
-INPUT sections/rw.tex
-INPUT sections/rw.tex
 INPUT c:/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmti12.tfm
+INPUT sections/pra.tex
+INPUT sections/pra.tex
+INPUT sections/rw.tex
+INPUT sections/rw.tex
 INPUT c:/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmcsc10.tfm
 INPUT main.aux
 INPUT ./main.out

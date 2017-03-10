@@ -62,4 +62,14 @@ Using the same definition from the previous section for largest expected degree,
 	\label{eq:largest-expected-degree-ra-criteria}
 \end{equation}
 
-Again, the summation is similar to the previous \autoref{eq:ra-geom-series} just with a different lower limit. 
+Again, the summation is similar to the previous \autoref{eq:ra-geom-series} just with a different lower limit. Applying the geometric series summation formula to the terms in the summation, we get 
+\begin{equation}
+	\frac{N}{m+1} \left ( \frac{m}{m+1} \right )^{k_1 - m} \frac{1}{1 - (m / (m+1))} = 1
+\end{equation}
+
+Rearranging this and taking logarithm of both sides, we obtain an expression for $k_1$:
+\begin{equation}
+	k_1 = \frac{\ln N}{\ln (m+1) - \ln m} + m
+	\label{eq:largest-degree-ra}
+\end{equation}
+From this, we know that the largest degree grow logarithmically with $N$, as opposed to a power law like for preferential attachment. 
