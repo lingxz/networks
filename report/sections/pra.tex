@@ -43,6 +43,7 @@ For normalization, we need to check that
 The terms in the summation form a converging geometric series, with the starting term being zero and common ratio being $m / (m+1)$. Hence we have 
 \begin{equation}
 	\sum_{k=m}^{\infty} \left ( \frac{m}{m+1} \right )^{k-m} = \frac{1}{1 - [m / (m+1)]}. 
+	\label{eq:ra-geom-series}
 \end{equation}
 
 By substituting this back into the \autoref{eq:ra-check-normalization}, we can see that normalization is satisfied. 
@@ -53,3 +54,12 @@ As we can see from \autoref{eq:p-infinity-solution-ra}, the resulting degree dis
 Numerical simulations confirmed that growth alone is not sufficient to produce a scale free structure. 
 
 \subsection{Largest expected degree}\label{subsection:largest-expected-degree}
+\subsubsection{Theory}
+Using the same definition from the previous section for largest expected degree, we need
+
+\begin{equation}
+	N \sum_{k=k_1}^\infty p_{\infty}(k) = N \sum_{k=k_1}^\infty \frac{1}{m+1} \left (\frac{m}{m+1} \right )^{k-m} = 1.
+	\label{eq:largest-expected-degree-ra-criteria}
+\end{equation}
+
+Again, the summation is similar to the previous \autoref{eq:ra-geom-series} just with a different lower limit. 

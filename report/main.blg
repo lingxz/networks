@@ -18,52 +18,47 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: main-blx.bib
 Database file #2: library.bib
-Illegal end of database file---line 2109 of file library.bib
- : author = {{Planck HFI Core Team} and Ade, P.{\~{}}A.{\~{}}R. and Aghanim, N and Ansari, R and Arnaud, M and Ashdown, M and Aumont, J and Banday, A.{\~{}}J. and Bartelmann, M and Bartlett, J.{\~{}}G. and Battaner, E and Benabed, K and Beno{\^{i}}t, A and Bernard, J.-P. and Bersanelli, M and Bock, J.{\~{}}J. and Bond, J.{\~{}}R. and Borrill, J and Bouchet, F.{\~{}}R. and Boulanger, F and Bradshaw, T and Bucher, M and Cardoso, J.-F. and Castex, G and Catalano, A and Challinor, A and Chamballu, A and Chary, R.-R. and Chen, X and Chiang, C and Church, S and Clements, D.{\~{}}L. and Colley, J.-M. and Colombi, S and Couchot, F and Coulais, A and Cressiot, C and Crill, B.{\~{}}P. and Crook, M and de Bernardis, P and Delabrouille, J and Delouis, J.-M. and D{\'{e}}sert, F.-X. and Dolag, K and Dole, H and Dor{\'{e}}, O and Douspis, M and Dunkley, J and Efstathiou, G and Filliard, C and Forni, O and Fosalba, P and Ganga, K and Giard, M and Girard, D and Giraud-H{\'{e}}raud, Y and Gispert, R and G{\'{o}}rski, K.{\~{}}M. and Gratton, S and Griffin, M and Guyot, G and Haissinski, J and Harrison, D and Helou, G and Henrot-Versill{\'{e}}, S and Hern{\'{a}}ndez-Monteagudo, C and Hildebrandt, S.{\~{}}R. and Hills, R and Hivon, E and Hobson, M and Holmes, W.{\~{}}A. and Huffenberger, K.{\~{}}M. and Jaffe, A.{\~{}}H. and Jones, W.{\~{}}C. and Kaplan, J and Kneissl, R and Knox, L and Kunz, M and Lagache, G and Lamarre, J.-M. and Lange, A.{\~{}}E. and Lasenby, A and Lavabre, A and Lawrence, C.{\~{}}R. and {Le Jeune}, M and Leroy, C and Lesgourgues, J and Mac$\backslash$'$\backslash$ias-P{\'{e}}rez, J.{\~{}}F. and MacTavish, C.{\~{}}J. and Maffei, B and Mandolesi, N and Mann, R and Marleau, F and Marshall, D.{\~{}}J. and Masi, S and Matsumura, T and McAuley, I and McGehee, P and Melin, J.-B. and Mercier, C and Mitra, S and Miville-Desch{\^{e}}nes, M.-A. and Moneti, A and Montier, L and Mortlock, D and Murphy, A and Nati, F and Netterfield, C.{\~{}}B. and N{\o}rgaard-Nielsen, H.{\~{}}U. and North, C and Noviello, F and Novikov, D and Osborne, S and Pajot, F and Patanchon, G and Peacocke, T and Pearson, T.{\~{}}J. and Perdereau, O and Perotto, L and Piacentini, F and Piat, M and Plaszczynski, S and Pointecouteau, E and Ponthieu, N and Pr{\'{e}}zeau, G and Prunet, S and Puget, J.-L. and Reac
- :                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
-I'm skipping whatever remains of this entry
 Biblatex version: 3.3
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-You've used 7 entries,
+You've used 8 entries,
             6256 wiz_defined-function locations,
-            1257 strings with 14381 characters,
-and the built_in function-call counts, 37155 in all, are:
-= -- 2287
-> -- 769
-< -- 173
-+ -- 892
-- -- 365
-* -- 3173
-:= -- 3810
+            1272 strings with 16235 characters,
+and the built_in function-call counts, 42914 in all, are:
+= -- 2736
+> -- 771
+< -- 176
++ -- 1003
+- -- 353
+* -- 3614
+:= -- 4400
 add.period$ -- 0
-call.type$ -- 7
-change.case$ -- 66
+call.type$ -- 8
+change.case$ -- 77
 chr.to.int$ -- 30
-cite$ -- 12
-duplicate$ -- 3952
-empty$ -- 3508
-format.name$ -- 464
-if$ -- 7555
+cite$ -- 14
+duplicate$ -- 4624
+empty$ -- 4151
+format.name$ -- 497
+if$ -- 8672
 int.to.chr$ -- 0
-int.to.str$ -- 12
+int.to.str$ -- 14
 missing$ -- 0
-newline$ -- 324
-num.names$ -- 246
-pop$ -- 2029
+newline$ -- 378
+num.names$ -- 287
+pop$ -- 2380
 preamble$ -- 1
-purify$ -- 107
+purify$ -- 120
 quote$ -- 0
-skip$ -- 1101
+skip$ -- 1159
 stack$ -- 0
-substring$ -- 3818
-swap$ -- 1216
-text.length$ -- 197
-text.prefix$ -- 6
+substring$ -- 4635
+swap$ -- 1402
+text.length$ -- 202
+text.prefix$ -- 7
 top$ -- 1
-type$ -- 226
+type$ -- 260
 warning$ -- 0
-while$ -- 490
+while$ -- 571
 width$ -- 0
-write$ -- 318
-(There was 1 error message)
+write$ -- 371
