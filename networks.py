@@ -102,20 +102,6 @@ class BAGraph(BaseBAGraph):
         self.repeated_nodes = []
         self.increment()
 
-    def increment(self):
-        # M = np.zeros(2 * self.N * self.m)
-        M = [None]*(2*self.N*self.m)
-        for current in range(self.N):
-            for i in range(self.m):
-                m_index = 2* (current * self.m + i)
-                M[m_index] = current
-                r = random.randint(0, 2*(current*self.m + i))
-                M[m_index+1] = M[r]
-
-        for i in range(self.N * self.m):
-            self.add_edge(M[2*i], M[2*i+1])
-
-
     def _set_targets(self, current):
         m = self.m
         self.repeated_nodes.extend(self.targets)
@@ -161,6 +147,6 @@ class RWGraph(BaseBAGraph):
             start = random.choice(self.nodes())
             v = start
             for step in range(L):
-                v = random.choice(self.neighbours(v))
+                v = random.choice(self.neighbors(v))
             targets.add(v)
         self.targets = list(targets)

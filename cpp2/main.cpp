@@ -25,50 +25,6 @@ using std::chrono::duration_cast;
 using std::chrono::milliseconds;
 //using namespace std::literals::chrono_literals;
 
-template<class bidiiter>
-bidiiter random_unique(bidiiter begin, bidiiter end, size_t num_random) {
-    size_t left = std::distance(begin, end);
-    while (num_random--) {
-        bidiiter r = begin;
-        std::advance(r, rand()%left);
-        std::swap(*begin, *r);
-        ++begin;
-        --left;
-    }
-    return begin;
-}
-
-std::vector<int> random_subset(std::vector<int> seq, int m) {
-    std::set<int> targets;
-
-//    std::random_device rd;
-//    std::mt19937 mt(rd());
-//    std::uniform_int_distribution<int> dist(0, seq.size()-1);
-    int max;
-    if (10 * m > seq.size()) {
-        max = seq.size();
-    } else {
-        max = 10 * m;
-    }
-    random_unique(seq.begin(), seq.end(), max);
-    int i = 0;
-    while (targets.size() < m) {
-//        int randindex = rand() % seq.size();
-//        int randindex = *select_randomly(targets.begin(), targets.end());
-//        int randindex = dist(mt);
-        targets.insert(seq[i]);
-        i++;
-    }
-
-    std::vector<int> v(targets.size());
-//    std::copy(targets.begin(), targets.end(), v.begin());
-    v.assign(targets.begin(), targets.end());
-
-//    for (std::vector<int>::const_iterator i = v.begin(); i != v.end(); ++i)
-//        std::cout << *i << ' ';
-//    cout << "\nend" << endl;
-    return v;
-}
 
 simplegraph BAGraph(int n, int m) {
     simplegraph g;
@@ -92,13 +48,29 @@ simplegraph BAGraph(int n, int m) {
     return g;
 }
 
+simplegraph RAGraph(int n, int m) {
+    simplegraph g;
+    std::random_device rd;     // only used once to initialise (seed) engine
+    std::mt19937 rng(rd());    // random-number engine used (Mersenne-Twister in this case)
 
-void run_ba_diff_m() {
-    const char *directory = "../../data/ba/deg_dist/";
-//    int m_array[6] = {1, 2, 4, 8, 16, 32};
-    int m_array[1] = {4};
-    int n = 100000;
-    for (int i = 0; i < 1; i++) {
+    for (int v = 0; v < n; v++) {
+        g.addVertex();
+        for (int i = 0; i < m; i++) {
+            std::uniform_int_distribution<int> uni(0, v);
+            auto r = uni(rng);
+            g.addEdge(v, r);
+        }
+    }
+}
+
+void run_ba_diff_m(int n, string s) {
+    const string directory = "../../data/ba/deg_dist" + s + '/';
+    //Make the directory if it doesn't exist
+    string s1 = "mkdir ";
+    string s2 = "../../data/ba/deg_dist";
+    system((s1 + s2 + s).c_str());
+    int m_array[6] = {1, 2, 4, 8, 16, 32};
+    for (int i = 0; i < 6; i++) {
         simplegraph g = BAGraph(n, m_array[i]);
 
         // get file path
@@ -147,20 +119,67 @@ void run_ba_diff_n(int m, string s) {
     }
 }
 
+vector<int> generate_synthetic(int m, int max, int N) {
+    // Setup the random bits
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    vector<float> weights(max);
+    for (int k = 0; k < max; k++) {
+        if (k < m) {
+            weights[k] = 0;
+        } else {
+            float a = 2 * float(m) * (float(m) + 1) / (float(k) * (float(k) + 1) * (float(k) + 2));
+            weights[k] = a;
+        }
+    }
+
+    // Create the distribution with those weights
+    std::discrete_distribution<> d(weights.begin(), weights.end());
+    vector<int> degrees(N);
+    for (int n = 0; n < N; n++) {
+        int number = d(gen);
+        degrees[n] = number;
+    }
+    return degrees;
+}
+
+void generate_synthetic_wrapper(int m, int max, int N) {
+    const string directory = "../../data/ba/synthetic/";
+    //Make the directory if it doesn't exist
+    string s1 = "mkdir ";
+    string s2 = "../../data/ba/synthetic";
+    system((s1 + s2).c_str());
+
+    for (int i=0; i < 25; i++) {
+        // get file path
+        std::ostringstream oss;
+        oss << directory << N << "_" << m << "_" << i <<".csv";
+        ofstream file (oss.str());
+        vector<int> v = generate_synthetic(m, max, N);
+        std::copy(v.begin(), v.end(), std::ostream_iterator<int>(file, ","));
+    }
+}
 
 int main() {
-    for (int i=41;  i<=100; i++) {
+//    generate_synthetic_wrapper(1, 3027, 1000000);
+//    generate_synthetic_wrapper(2, 5195, 1000000);
+//    generate_synthetic_wrapper(4, 10916, 1000000);
+//    generate_synthetic_wrapper(8, 20417, 1000000);
+//    generate_synthetic_wrapper(16, 33887, 1000000);
+//    generate_synthetic_wrapper(32, 64985, 1000000);
+
+//    generate_synthetic_wrapper(32, 16569, 100000);
+    for (int i=21;  i<=100; i++) {
         string s = std::to_string(i);
-        run_ba_diff_n(4, s);
-        run_ba_diff_n(8, s);
+        run_ba_diff_m(1000000, s);
     }
+//    run_ba_diff_m(100000, "1");
 
 //    time_point<Clock> start = Clock::now();
 //    simplegraph g = BAGraph(100, 4);
-//    Barabasi(4, 100000);
 //    time_point<Clock> end = Clock::now();
 //    milliseconds diff = duration_cast<milliseconds>(end - start);
-//
+
 //    std::cout << diff.count() << "ms" << endl;
 
 //    vector<int> dd;
