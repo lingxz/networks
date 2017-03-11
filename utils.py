@@ -2,6 +2,8 @@ import log_bin
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
+import scipy.stats
+import random
 
 def log_bin_and_plot(df, a=1.7, font_size=10, **kwargs):
     log_binned_df = pd.DataFrame()
@@ -168,3 +170,75 @@ def log_bin_freq_and_plot(df, a=1.7, font_size=10, **kwargs):
 def largest_degree(N, m):
     D = 1 + 4 * N * m * (m+1)
     return (-1 + np.sqrt(D))/2
+
+def largest_degree_ra(N, m):
+    return np.log(N) / (np.log(m+1) - np.log(m)) + m
+
+class ba_degree_dist(scipy.stats.rv_discrete):
+    def _pmf(self, k, m):
+        return deg_dist_theory(m, k)
+
+class ba_degree_dist_float(scipy.stats.rv_continuous):
+    def _pdf(self, k, m):
+        return deg_dist_theory(m, k)
+
+def generate_synthetic_data2(m, simulated_dataset, number_of_nodes):
+    # simulated_dataset is a pandas dataframe series
+    # returns a pandas series
+    simulated_dataset.sort_index()
+    simulated_dataset = simulated_dataset.dropna()
+    N = simulated_dataset.sum()
+    ccdf = 1. - simulated_dataset.cumsum()
+    n = ccdf[ccdf < 1. / number_of_nodes].sum()
+    k1 = ccdf[ccdf >= 1. / number_of_nodes].index[0]
+    dist = ba_degree_dist(a=m, b=k1, name='dist')
+
+    result_degrees = []
+    for i in range(number_of_nodes):
+        if random.random() < n / N:
+            result_degrees.append(dist.rvs(size=1, m=m)[0])
+        else:
+            r = random.uniform(0, N)
+            row = np.digitize(r, simulated_dataset.cumsum().values)
+            result_degrees.append(simulated_dataset.head(row + 1).index[-1])
+    return result_degrees
+
+def generate_synthetic_data(m, data):
+    N = len(data)
+    maximum = max(data)
+    dist = ba_degree_dist(a=m, b=maximum, name='dist')
+    print(dist)
+    return dist.rvs(size=100000, m=m)
+
+
+def convert_deg_dist_to_degrees(degrees, counts):
+    assert(len(degrees) == len(counts))
+    # converts a degree distribution to a list of degrees
+    result = []
+    for i in range(len(degrees)):
+        extra = [degrees[i]] * int(counts[i])
+        result.extend(extra)
+    return result
+
+# def generate_synthetic_data(m, simulated_dataset, number_of_nodes):
+#     simulated_dataset.sort_index()
+#     simulated_dataset = simulated_dataset.dropna()
+#     N = simulated_dataset.sum()
+#     ccdf = 1. - simulated_dataset.cumsum()
+#     n = ccdf[ccdf < 1. / number_of_nodes].sum()
+#     k1 = ccdf[ccdf >= 1. / number_of_nodes].index[0]
+#     dist = ba_degree_dist(a=0, b=k1, name='dist')
+#
+#     result_degrees = []
+#     for i in range(number_of)
+
+def deg_dist_cdf(k, m, range_start, range_end):
+    values = []
+    k_range = np.arange(range_start, range_end)
+    total = deg_dist_theory(m, k_range).sum()
+    for value in k:
+        start_to_value = np.arange(range_start, value+1)
+        cumulative = deg_dist_theory(m, start_to_value).sum()
+        normalized = cumulative / total
+        values.append(normalized)
+    return np.array(values)
