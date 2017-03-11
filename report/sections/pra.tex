@@ -51,7 +51,14 @@ By substituting this back into the \autoref{eq:ra-check-normalization}, we can s
 As we can see from \autoref{eq:p-infinity-solution-ra}, the resulting degree distribution in this limit is geometric \citep{Pekoz2013}, indicating that growth alone is not sufficient to produce a scale free structure. 
 
 \subsubsection{Numerical analysis}\label{subsection:ra-numerical-analysis}
-Numerical simulations confirmed that growth alone is not sufficient to produce a scale free structure. 
+Numerical simulations confirmed that growth alone is not sufficient to produce a scale free structure. ?? shows the graph of numerical simulations and their log-binned probabilities for $N=10^6$ and different values of $m$. 
+
+Goodness of fit was tested in the same way as in the previous section. When tested against the null hypothesis of a geometric distribution governed by \autoref{eq:p-infinity-solution-ra} p-values obtained are listed below, showing that it is plausible that the simulated data follow the theoretical distribution. 
+\begin{table}
+	??
+\end{table}
+
+To demonstrate whether this test is effective, random attachment simulation data was also tested against the power law distribution, and we obtained result of $p = 0$, to an accuracy of $\pm 0.05$, for all $m$. This shows that we can reject the power law hypothesis as expected. 
 
 \subsection{Largest expected degree}\label{subsection:largest-expected-degree}
 \subsubsection{Theory}
@@ -73,3 +80,6 @@ Rearranging this and taking logarithm of both sides, we obtain an expression for
 	\label{eq:largest-degree-ra}
 \end{equation}
 From this, we know that the largest degree grow logarithmically with $N$, as opposed to a power law like for preferential attachment. 
+
+\subsubsection{Numerical analysis}
+The numerical largest degree was calculated in the same way as described in the previous section. Figure ?? shows the discrepancy between the numerical and theoretical largest degree. The ratio between $k_1^{\text{theory}}$ and $k_1^{\text{numerical}}$ is largely constant. 
