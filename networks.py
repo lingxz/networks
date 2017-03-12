@@ -134,7 +134,7 @@ class RWGraph(BaseBAGraph):
 
     def __init__(self, m, N, L):
         # L is the random walk length
-        super().__init__(m, N, data=nx.empty_graph(m))
+        super().__init__(m, N, data=nx.complete_graph(m))
         self.targets = self.nodes()
         self.L = L
         self.increment()
@@ -143,9 +143,9 @@ class RWGraph(BaseBAGraph):
         L = self.L
         m = self.m
         targets = set()
+        start = random.choice(self.nodes())
+        v = start
         while len(targets) < m:
-            start = random.choice(self.nodes())
-            v = start
             for step in range(L):
                 v = random.choice(self.neighbors(v))
             targets.add(v)
