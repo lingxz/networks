@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import scipy.stats
 import random
+from collections import Counter
 
 def log_bin_and_plot(df, a=1.7, font_size=10, **kwargs):
     log_binned_df = pd.DataFrame()
@@ -81,17 +82,17 @@ def get_deg_dist_from_file(folder, n, m):
     filepath = folder + filename
     return pd.read_csv(filepath)
 
-def visualize_ccdf(df, m, ax=None):
+def visualize_ccdf(df, m, ax=None, font_size=20, model=deg_dist_theory):
     if ax is None:
         ax = plt.figure().gca()
     column_to_plot = 1 - df[m].cumsum(skipna=True)
     column_to_plot = column_to_plot.dropna().head(-1)
-    column_to_plot.plot(style='-', logy=True, ax=ax)
+    column_to_plot.plot(style='-', logy=True, ax=ax, label='Numerical')
     last_k = column_to_plot.index[-1]
     ks = np.arange(m, last_k)
-    a = deg_dist_theory(m, ks)
+    a = model(m, ks)
     theory_ccdf = 1 - pd.Series(a, index=ks).cumsum(skipna=True)
-    theory_ccdf.dropna().plot(logy=True, style='--', ax=ax)
+    theory_ccdf.dropna().plot(logy=True, fontsize=font_size, style='--', ax=ax, label="Theoretical")
 
 # modified from log_bin.py file provided by James Clough 2015
 def log_bin_from_freq_count(values, freqs, bin_start=1., first_bin_width=1., a=2.,
@@ -182,6 +183,18 @@ class ba_degree_dist_float(scipy.stats.rv_continuous):
     def _pdf(self, k, m):
         return deg_dist_theory(m, k)
 
+def second_largest(numbers):
+    count = 0
+    m1 = m2 = float('-inf')
+    for x in numbers:
+        count += 1
+        if x > m2:
+            if x >= m1:
+                m1, m2 = x, m1
+            else:
+                m2 = x
+    return m2 if count >= 2 else None
+
 def generate_synthetic_data2(m, simulated_dataset, number_of_nodes):
     # simulated_dataset is a pandas dataframe series
     # returns a pandas series
@@ -242,3 +255,17 @@ def deg_dist_cdf(k, m, range_start, range_end):
         normalized = cumulative / total
         values.append(normalized)
     return np.array(values)
+
+def convert_raw_to_deg_dist(raw, ms):
+    # input is 2d array with shape (number of ms, number of repeats)
+    # returns a pandas dataframe
+    df = pd.DataFrame()
+    for i, data in enumerate(raw):
+        # value counts for each m
+        counters = [Counter(x) for x in data]
+        sums = dict(sum(counters, Counter()))
+        data_mean = {x: float(sums[x]) / len(data) for x in sums.keys()}
+        additional = pd.DataFrame.from_dict(data_mean, orient='index')
+        additional.columns = [ms[i]]
+        df = pd.concat([df, additional], axis=1)
+    return df
