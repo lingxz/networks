@@ -371,6 +371,56 @@
     \field{year}{2004}
   \endentry
 
+  \entry{Lawrence1997}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=LJ}{%
+         family={Lawrence},
+         familyi={L\bibinitperiod},
+         given={John},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{LJ1}
+    \strng{fullhash}{LJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{1997}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \field{abstract}{%
+    The first step-by-step guide to conducting successful Chi-squared
+  testsChi-squared testing is one of the most commonly applied statistical
+  techniques. It provides reliable answers for researchers in a wide range of
+  fields, including engineering, manufacturing, finance, agriculture, and
+  medicine.A Guide to Chi-Squared Testing brings readers up to date on recent
+  innovations and important material previously published only in the former
+  Soviet Union. Its clear, concise treatment and practical advice make this an
+  ideal reference for all researchers and consultants.Authors Priscilla E.
+  Greenwood and Mikhail S. Nikulin demonstrate the application of these general
+  purpose tests in a wide variety of specific settings. They also * Detail the
+  various decisions to be made when applying Chi-squared tests to real data,
+  and the proper application of these tests in standard hypothesis-testing
+  situations * Describe how Chi-squared type tests allow statisticians to
+  construct a test statistic whose distribution is asymptotically Chi-squared,
+  and to compute power against various alternatives * Devote half of the book
+  to examples of Chi-squared tests that can be easily adapted to situations not
+  covered in the book * Provide a self-contained, accessible treatment of the
+  mathematical requisites * Include an extensive bibliography and suggestions
+  for further reading%
+    }
+    \field{booktitle}{Journal of Statistical Planning and Inference}
+    \verb{doi}
+    \verb 10.1016/S0378-3758(97)00101-8
+    \endverb
+    \field{isbn}{047155779X}
+    \field{issn}{03783758}
+    \field{number}{1}
+    \field{pages}{157\bibrangedash 158}
+    \field{title}{{A guide to Chi-squared testing}}
+    \field{volume}{64}
+    \field{year}{1997}
+  \endentry
+
   \entry{Pekoz2013}{article}{}
     \name{author}{3}{}{%
       {{hash=PEA}{%

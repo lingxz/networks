@@ -51,7 +51,21 @@ By substituting this back into the \autoref{eq:ra-check-normalization}, we can s
 As we can see from \autoref{eq:p-infinity-solution-ra}, the resulting degree distribution in this limit is geometric \citep{Pekoz2013}, indicating that growth alone is not sufficient to produce a scale free structure. 
 
 \subsubsection{Numerical analysis}\label{subsection:ra-numerical-analysis}
-Numerical simulations confirmed that growth alone is not sufficient to produce a scale free structure. ?? shows the graph of numerical simulations and their log-binned probabilities for $N=10^6$ and different values of $m$. 
+Numerical simulations confirmed that growth alone is not sufficient to produce a scale free structure. \autoref{fig:ra-fixed-n-degree} shows the raw degree distribution of numerical simulations for $N=10^6$ and different values of $m$. The fat tail was reduced by taking the average of multiple simulations. Already, we can see that it does not follow a power law. After log binning, it follows the theoretical geometric simulation very well for small $k$, as can be seen in \autoref{fig:ra-fixed-n-logbin}.
+
+\begin{figure}
+    \centering
+    \includegraphics[height=0.5\linewidth]{img/ra-fixed-n-degree}
+    \caption{Raw degree distribution for random attachment for $N = 10^6$ and $m = 1, 2, 4, 8, 16, 32$. }
+    \label{fig:ra-fixed-n-degree}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[height=0.5\linewidth]{img/ra-fixed-n-logbin}
+    \caption{Data collapse of the degree distribution for networks of size $N=10^2, 10^3, 10^4, 10^5, 10^6, 10^7$}
+    \label{fig:ra-fixed-n-logbin}
+\end{figure}
 
 Goodness of fit was tested in the same way as in the previous section. When tested against the null hypothesis of a geometric distribution governed by \autoref{eq:p-infinity-solution-ra} p-values obtained are listed below, showing that it is plausible that the simulated data follow the theoretical distribution. 
 \begin{table}
@@ -82,4 +96,30 @@ Rearranging this and taking logarithm of both sides, we obtain an expression for
 From this, we know that the largest degree grow logarithmically with $N$, as opposed to a power law like for preferential attachment. 
 
 \subsubsection{Numerical analysis}
-The numerical largest degree was calculated in the same way as described in the previous section. Figure ?? shows the discrepancy between the numerical and theoretical largest degree. The ratio between $k_1^{\text{theory}}$ and $k_1^{\text{numerical}}$ is largely constant. 
+The numerical largest degree was calculated in the same way as described in the previous section. Figure ?? shows the discrepancy between the numerical and theoretical largest degree. The ratio between $k_1^{\text{theory}}$ and $k_1^{\text{numerical}}$ is largely constant. From \autoref{fig:ra-numerical-theoretical-k1} we can see that the difference between the numerical and theoretical values decrease as $N$ increases, which is expected. 
+
+\begin{figure}
+    \centering
+    \includegraphics[height=0.5\linewidth]{img/ra-numerical-theoretical-k1}
+    \caption{This shows the difference in $k_1$ for different values of $N$ ranging from $100$ to $10^7$ for random attachment. From the graph we can see that the difference between the theoretical and numerical values decrease as $N$ increases.}
+    \label{fig:ra-numerical-theoretical-k1}
+\end{figure}
+
+From the following tables of values, we can also see that the values get closer to 1 for larger $N$. Similarly, the standard error was estimated from the sample standard deviation, governed by \autoref{eq:population-std}. 
+
+\begin{center}
+\begin{tabular}{ ||c | c | c | c ||}
+\hline
+N & $k_1^{\text{theory}}$ & $k_1^{\text{numerical}}$ & $k_1^{\text{numerical}} / k_1^{\text{theory}} $\\ 
+\hline
+$10^2$ & 25    & 21.85  $\pm$ 0.01 & 0.887 \\  
+$10^3$ & 35   & 32.15 $\pm$ 0.03 & 0.920 \\
+$10^4$ & 46   & 42.05   $\pm$  0.03  & 0.929 \\
+$10^5$ & 56  & 52.75  $\pm$  0.02  & 0.949 \\
+$10^6$ & 66  & 63.55  $\pm$  0.02  & 0.964 \\
+$10^7$ & 76 & 73.55 $\pm$ 0.03  & 0.965 \\  
+\hline
+\end{tabular}
+\label{table:ra-numerical-theoretical-ratio}
+\captionof{table}{This table shows the theoretical and numerical values for the largest expected degree as defined in \autoref{eq:largest-degree-ra} for random attachment. The errors on $k_1$ are rounded off to 1 significant figure. }
+\end{center}
