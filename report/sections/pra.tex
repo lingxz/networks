@@ -51,13 +51,13 @@ By substituting this back into the \autoref{eq:ra-check-normalization}, we can s
 As we can see from \autoref{eq:p-infinity-solution-ra}, the resulting degree distribution in this limit is geometric \citep{Pekoz2013}, indicating that growth alone is not sufficient to produce a scale free structure. 
 
 \subsubsection{Numerical analysis}\label{subsection:ra-numerical-analysis}
-Numerical simulations confirmed that growth alone is not sufficient to produce a scale free structure. \autoref{fig:ra-fixed-n-degree} shows the raw degree distribution of numerical simulations for $N=10^6$ and different values of $m$. The fat tail was reduced by taking the average of multiple simulations. Already, we can see that it does not follow a power law. After log binning, it follows the theoretical geometric simulation very well for small $k$, as can be seen in \autoref{fig:ra-fixed-n-logbin}.
+Numerical simulations confirmed that growth alone is not sufficient to produce a scale free structure. \autoref{fig:ra-fixed-n-degree-dist} shows the raw degree distribution of numerical simulations for $N=10^6$ and different values of $m$. The fat tail was reduced by taking the average of multiple simulations. Already, we can see that it does not follow a power law. After log binning, it follows the theoretical geometric simulation very well for small $k$, as can be seen in \autoref{fig:ra-fixed-n-logbin}.
 
 \begin{figure}
     \centering
-    \includegraphics[height=0.5\linewidth]{img/ra-fixed-n-degree}
+    \includegraphics[height=0.5\linewidth]{img/ra-fixed-n-degree-dist}
     \caption{Raw degree distribution for random attachment for $N = 10^6$ and $m = 1, 2, 4, 8, 16, 32$. }
-    \label{fig:ra-fixed-n-degree}
+    \label{fig:ra-fixed-n-degree-dist}
 \end{figure}
 
 \begin{figure}
@@ -67,10 +67,21 @@ Numerical simulations confirmed that growth alone is not sufficient to produce a
     \label{fig:ra-fixed-n-logbin}
 \end{figure}
 
-Goodness of fit was tested in the same way as in the previous section. When tested against the null hypothesis of a geometric distribution governed by \autoref{eq:p-infinity-solution-ra} p-values obtained are listed below, showing that it is plausible that the simulated data follow the theoretical distribution. 
-\begin{table}
-	??
-\end{table}
+Goodness of fit was tested in the same way as in the previous section. When tested against the null hypothesis of a geometric distribution governed by \autoref{eq:p-infinity-solution-ra} p-values obtained are listed below, showing that it is plausible that the simulated data follow the theoretical distribution. While the $p$-values fluctuate between 0.4 and 0.7, they are all safely above the threshold of $0.1$. 
+
+\begin{center}
+\begin{tabular}{ c | c }
+N & $k_1^{\text{theory}}$ & $k_1^{\text{numerical}}$ & $k_1^{\text{numerical}} / k_1^{\text{theory}} $\\ 
+\hline
+1  & 0.714
+2  & 0.446
+4  & 0.502
+8  & 0.706
+16 & 0.456
+\end{tabular}
+\label{table:ra-ks-test}
+\captionof{table}{The list of $p$-values for each $m$ for random attachment when compared with synthetic datasets.}}
+\end{center}
 
 To demonstrate whether this test is effective, random attachment simulation data was also tested against the power law distribution, and we obtained result of $p = 0$, to an accuracy of $\pm 0.05$, for all $m$. This shows that we can reject the power law hypothesis as expected. 
 

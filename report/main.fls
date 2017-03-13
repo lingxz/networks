@@ -203,6 +203,9 @@ INPUT ./img/pa-data-collapse.png
 INPUT ./img/pa-data-collapse.png
 INPUT sections/pra.tex
 INPUT sections/pra.tex
+INPUT img/ra-fixed-n-degree-dist.png
+INPUT ./img/ra-fixed-n-degree-dist.png
+INPUT ./img/ra-fixed-n-degree-dist.png
 INPUT img/ra-fixed-n-logbin.png
 INPUT ./img/ra-fixed-n-logbin.png
 INPUT ./img/ra-fixed-n-logbin.png
