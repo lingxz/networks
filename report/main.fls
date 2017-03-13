@@ -161,12 +161,6 @@ INPUT c:/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT c:/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT c:/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmtt12.tfm
 INPUT c:/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
-INPUT c:/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map
-INPUT sections/ppa.tex
-INPUT sections/ppa.tex
-INPUT c:/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmr17.tfm
-INPUT c:/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
-INPUT c:/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT c:/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
 INPUT c:/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmr6.tfm
 INPUT c:/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
@@ -184,6 +178,12 @@ INPUT c:/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
 INPUT c:/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT c:/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT c:/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
+INPUT c:/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map
+INPUT sections/ppa.tex
+INPUT sections/ppa.tex
+INPUT c:/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmr17.tfm
+INPUT c:/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+INPUT c:/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT c:/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmtt12.tfm
 INPUT c:/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmti12.tfm
 INPUT img/pa-fixed-n-degree-dist.png
@@ -214,6 +214,9 @@ INPUT ./img/ra-numerical-theoretical-k1.png
 INPUT ./img/ra-numerical-theoretical-k1.png
 INPUT sections/rw.tex
 INPUT sections/rw.tex
+INPUT img/rw-fixed-n-degree-dist.png
+INPUT ./img/rw-fixed-n-degree-dist.png
+INPUT ./img/rw-fixed-n-degree-dist.png
 INPUT c:/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmcsc10.tfm
 INPUT main.aux
 INPUT ./main.out

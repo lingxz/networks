@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex main"] 1489360879 "main.aux" "main.bbl" "main" 1489361394
+["bibtex main"] 1489365967 "main.aux" "main.bbl" "main" 1489366038
   "c:/texlive/2016/texmf-dist/bibtex/bst/biblatex/biblatex.bst" 1486053754 63002 075c3f13314e99e71e6ff0a472a98980 ""
   "library.bib" 1489354775 99573 ff21008d7250b30f7056b969c93753bc ""
-  "main-blx.bib" 1489361386 306 c590f5e4e60ccc2cb47668fe0ed30752 ""
-  "main.aux" 1489361392 14893 74da8215134de1934eaf4612ffde6f10 ""
+  "main-blx.bib" 1489366031 306 c590f5e4e60ccc2cb47668fe0ed30752 ""
+  "main.aux" 1489366037 15829 0a3b9d75bea8d4346cad30b06d7a27ae ""
   (generated)
   "main.blg"
   "main.bbl"
-["pdflatex"] 1489361384 "main.tex" "main.pdf" "main" 1489361394
+["pdflatex"] 1489366030 "main.tex" "main.pdf" "main" 1489366038
   "c:/texlive/2016/texmf-dist/fonts/map/fontname/texfonts.map" 1486053981 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "c:/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1486053696 1004 54797486969f23fa377b128694d548df ""
   "c:/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1486053696 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -119,19 +119,20 @@
   "img/ra-fixed-n-degree-dist.png" 1489359337 182374 3636ea6d3e778b7fbc9876fe6858d960 ""
   "img/ra-fixed-n-logbin.png" 1489359293 229079 cd6e4083d182459109e6793eda0adc53 ""
   "img/ra-numerical-theoretical-k1.png" 1489359518 58261 8b7928e60a9e04b933ac6501ed19b7a8 ""
-  "main.aux" 1489361392 14893 74da8215134de1934eaf4612ffde6f10 ""
-  "main.bbl" 1489360880 19022 1bec1ce9a56824474691d11bc9e9be9e "bibtex main"
-  "main.out" 1489361392 1248 13b84fde3984ce429b976e8f53ccb4ac ""
-  "main.run.xml" 1489361392 2559 cd9b077981da913bc4e9f93ca702e22b ""
-  "main.tex" 1488645868 642 cfa09ff7708abd11aeb5f3a5f24d8739 ""
+  "img/rw-fixed-n-degree-dist.png" 1489363485 234022 8e4acce32afa3733bd45eaf987ee06fa ""
+  "main.aux" 1489366037 15829 0a3b9d75bea8d4346cad30b06d7a27ae ""
+  "main.bbl" 1489365967 19022 1bec1ce9a56824474691d11bc9e9be9e "bibtex main"
+  "main.out" 1489366037 1248 13b84fde3984ce429b976e8f53ccb4ac ""
+  "main.run.xml" 1489366037 2559 cd9b077981da913bc4e9f93ca702e22b ""
+  "main.tex" 1489365880 1253 aa8edc53d6d520fcd77479ac798e1af2 ""
   "preamble.tex" 1489168786 1665 b6b0f09d8c8dd96d3e2fb02051bd4fcb ""
-  "sections/ppa.tex" 1489360172 20162 851c2d828194ba0df161214fda73536d ""
-  "sections/pra.tex" 1489361382 7375 56993f1af8a57df457b6fbc160ffecd9 ""
-  "sections/rw.tex" 1489254870 3156 cef13fb72fea28a0f7212370eb291b43 ""
+  "sections/ppa.tex" 1489361612 20190 aa1f4b41ba5fde2a93bd05a54399d73c ""
+  "sections/pra.tex" 1489363922 7766 7ff73968c2c1473e8a5800ecbf3fc7dc ""
+  "sections/rw.tex" 1489366028 4656 7afa641842f22f596743b1a44e756843 ""
   (generated)
-  "main.run.xml"
   "main.log"
-  "main.pdf"
   "main.out"
   "main.aux"
   "main-blx.bib"
+  "main.run.xml"
+  "main.pdf"
