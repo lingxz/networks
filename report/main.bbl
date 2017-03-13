@@ -91,6 +91,58 @@
     \field{year}{2001}
   \endentry
 
+  \entry{Barabasi1999}{article}{}
+    \name{author}{2}{}{%
+      {{hash=BAL}{%
+         family={Barab{\'{a}}si},
+         familyi={B\bibinitperiod},
+         given={Albert-L{\'{a}}szl{\'{o}}},
+         giveni={A\bibinitperiod-L\bibinitperiod},
+      }}%
+      {{hash=AR}{%
+         family={Albert},
+         familyi={A\bibinitperiod},
+         given={R{\'{e}}ka},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BALAR1}
+    \strng{fullhash}{BALAR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{1999}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{abstract}{%
+    Systems as diverse as genetic networks or the World Wide Web are best
+  described as networks with complex topology. A common property of many large
+  networks is that the vertex connectivities follow a scale-free power-law
+  distribution. This feature was found to be a consequence of two generic mech-
+  anisms: (i) networks expand continuously by the addition of new vertices, and
+  (ii) new vertices attach preferentially to sites that are already well
+  connected. A model based on these two ingredients reproduces the observed
+  stationary scale-free distributions, which indicates that the development of
+  large networks is governed by robust self-organizing phenomena that go beyond
+  the particulars of the individual systems.%
+    }
+    \verb{doi}
+    \verb 10.1126/science.286.5439.509
+    \endverb
+    \verb{eprint}
+    \verb 9910332
+    \endverb
+    \field{isbn}{1095-9203 (Electronic)$\backslash$n0036-8075 (Linking)}
+    \field{issn}{00368075}
+    \field{number}{October}
+    \field{pages}{509\bibrangedash 512}
+    \field{title}{{Emergence of Scaling in Random Networks}}
+    \field{volume}{286}
+    \field{journaltitle}{Science}
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{cond-mat}
+    \field{year}{1999}
+  \endentry
+
   \entry{Boguna2004}{article}{}
     \name{author}{3}{}{%
       {{hash=BM}{%

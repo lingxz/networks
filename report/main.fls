@@ -179,10 +179,12 @@ INPUT c:/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT c:/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT c:/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT c:/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map
-INPUT sections/ppa.tex
-INPUT sections/ppa.tex
+INPUT sections/introduction.tex
+INPUT sections/introduction.tex
 INPUT c:/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmr17.tfm
 INPUT c:/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+INPUT sections/ppa.tex
+INPUT sections/ppa.tex
 INPUT c:/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT c:/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmtt12.tfm
 INPUT c:/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmti12.tfm

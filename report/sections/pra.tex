@@ -1,8 +1,7 @@
 %!TEX root = ../main.tex
 \section{Pure random attachment}\label{section:pure-random-attachment}
 
-\subsection{Degree distribution}
-\subsubsection{Theory}
+\subsection{Degree distribution: Theory}
 The pure random attachment model can be seen as a limiting case of the BA model. In this model, all existing vertices are chosen with equal probability, i.e. $\Pi = \Pi_{rnd} \propto 1$. This preserves growth but removes preferential attachment. 
 
 Similar to the previous section, we start from the master equation in \autoref{eq:master}, and instead of $\Pi = k/ 2E(t)$ as in preferential attachment, we use $\Pi_{rnd} = 1 / N(t)$. Again, we consider the long-time ansatz $n(k, t) \rightarrow N(t) p_{\infty}(k)$. Substituting these terms into \autoref{eq:master}, we have
@@ -50,7 +49,7 @@ By substituting this back into the \autoref{eq:ra-check-normalization}, we can s
 
 As we can see from \autoref{eq:p-infinity-solution-ra}, the resulting degree distribution in this limit is geometric \citep{Pekoz2013}, indicating that growth alone is not sufficient to produce a scale free structure. 
 
-\subsubsection{Numerical analysis}\label{subsection:ra-numerical-analysis}
+\subsection{Degree distribution: Numerical analysis}\label{subsection:ra-numerical-analysis}
 Numerical simulations confirmed that growth alone is not sufficient to produce a scale free structure. \autoref{fig:ra-fixed-n-degree-dist} shows the raw degree distribution of numerical simulations for $N=10^6$ and different values of $m$. The fat tail was reduced by taking the average of multiple simulations. Already, we can see that it does not follow a power law. After log binning, it follows the theoretical geometric simulation very well for small $k$, as can be seen in \autoref{fig:ra-fixed-n-logbin}.
 
 \begin{figure}
@@ -85,8 +84,7 @@ m & $p$-value \\
 
 To demonstrate whether this test is effective, random attachment simulation data was also tested against the power law distribution, and we obtained result of $p = 0$, to an accuracy of $\pm 0.05$, for all $m$. This shows that we can reject the power law hypothesis as expected. 
 
-\subsection{Largest expected degree}\label{subsection:largest-expected-degree}
-\subsubsection{Theory}
+\subsection{Largest expected degree: Theory}\label{subsection:largest-expected-degree}
 Using the same definition from the previous section for largest expected degree, we need
 
 \begin{equation}
@@ -106,7 +104,7 @@ Rearranging this and taking logarithm of both sides, we obtain an expression for
 \end{equation}
 From this, we know that the largest degree grow logarithmically with $N$, as opposed to a power law like for preferential attachment. 
 
-\subsubsection{Numerical analysis}
+\subsection{Largest expected degree: Numerical analysis}
 The numerical largest degree was calculated in the same way as described in the previous section. Figure ?? shows the discrepancy between the numerical and theoretical largest degree. The ratio between $k_1^{\text{theory}}$ and $k_1^{\text{numerical}}$ is largely constant. From \autoref{fig:ra-numerical-theoretical-k1} we can see that the difference between the numerical and theoretical values decrease as $N$ increases, which is expected. 
 
 \begin{figure}
