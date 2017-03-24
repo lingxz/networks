@@ -261,26 +261,27 @@ void generate_synthetic_ra_wrapper(int m, int max, int N) {
 }
 
 int main() {
-//    generate_synthetic_wrapper(1, 3027, 1000000);
-//    generate_synthetic_wrapper(2, 5195, 1000000);
-//    generate_synthetic_wrapper(4, 10916, 1000000);
-//    generate_synthetic_wrapper(8, 20417, 1000000);
-//    generate_synthetic_wrapper(16, 33887, 1000000);
-//    generate_synthetic_wrapper(32, 64985, 1000000);
+//    generate_synthetic_wrapper(1, 94083, 100000);
+//    generate_synthetic_wrapper(2, 17467, 100000);
+//    generate_synthetic_wrapper(4, 7571, 100000);
+//    generate_synthetic_wrapper(8, 4413, 100000);
+//    generate_synthetic_wrapper(16, 4090, 100000);
+//    generate_synthetic_wrapper(32, 64985, 100000);
 
 
-    generate_synthetic_ra_wrapper(1, 22, 1000000);
-    generate_synthetic_ra_wrapper(2, 37, 1000000);
-    generate_synthetic_ra_wrapper(4, 70, 1000000);
-    generate_synthetic_ra_wrapper(8, 119, 1000000);
-    generate_synthetic_ra_wrapper(16, 271, 1000000);
-    generate_synthetic_ra_wrapper(32, 506, 1000000);
+//    generate_synthetic_ra_wrapper(1, 22, 1000000);
+//    generate_synthetic_ra_wrapper(2, 37, 1000000);
+//    generate_synthetic_ra_wrapper(4, 70, 1000000);
+//    generate_synthetic_ra_wrapper(8, 119, 1000000);
+//    generate_synthetic_ra_wrapper(16, 271, 1000000);
+//    generate_synthetic_ra_wrapper(32, 506, 1000000);
 
 
-//    for (int i=1;  i<=20; i++) {
-//        string s = std::to_string(i);
-//        run_ra_diff_n(4, s);
-//    }
+    for (int i=1;  i<=1; i++) {
+        string s = std::to_string(i);
+        run_ra_diff_m(100000, s);
+    }
+
 
 //    time_point<Clock> start = Clock::now();
 //    simplegraph g = BAGraph(100, 4);
