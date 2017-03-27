@@ -2,9 +2,9 @@
 \section{Pure random attachment}\label{section:pure-random-attachment}
 
 \subsection{Degree distribution: Theory}
-The pure random attachment model can be seen as a limiting case of the BA model. In this model, all existing vertices are chosen with equal probability, i.e. $\Pi = \Pi_{rnd} \propto 1$. This preserves growth but removes preferential attachment. 
+The pure random attachment model can be seen as a limiting case of the BA model, where all existing vertices are chosen with equal probability, i.e. $\Pi = \Pi_{rnd} \propto 1$. This preserves growth but removes preferential attachment. 
 
-Similar to the previous section, we start from the master equation in \autoref{eq:master}, and instead of $\Pi = k/ 2E(t)$ as in preferential attachment, we use $\Pi_{rnd} = 1 / N(t)$. Again, we consider the long-time ansatz $n(k, t) \rightarrow N(t) p_{\infty}(k)$. Substituting these terms into \autoref{eq:master}, we have
+We start from the master equation in \autoref{eq:master}, but instead of $\Pi = k/ 2E(t)$, we use $\Pi_{rnd} = 1 / N(t)$. Again, we consider the long-time ansatz $n(k, t) \rightarrow N(t) p_{\infty}(k)$. Substituting these terms into \autoref{eq:master}, we have
 
 \begin{equation}
 	p_{\infty}(k) = m p_{\infty}(k-1) - m p_{\infty}(k) + \delta_{k, m}. 
@@ -50,7 +50,7 @@ By substituting this back into the \autoref{eq:ra-check-normalization}, we can s
 As we can see from \autoref{eq:p-infinity-solution-ra}, the resulting degree distribution in this limit is geometric \citep{Pekoz2013}, indicating that growth alone is not sufficient to produce a scale free structure. 
 
 \subsection{Degree distribution: Numerical analysis}\label{subsection:ra-numerical-analysis}
-Numerical simulations confirmed that growth alone is not sufficient to produce a scale free structure. \autoref{fig:ra-fixed-n-degree-dist} shows the raw degree distribution of numerical simulations for $N=10^6$ and different values of $m$. The fat tail was reduced by taking the average of multiple simulations. Already, we can see that it does not follow a power law. After log binning, it follows the theoretical geometric simulation very well for small $k$, as can be seen in \autoref{fig:ra-fixed-n-logbin}.
+Numerical simulations confirmed that growth alone is not sufficient to produce a scale free structure. \autoref{fig:ra-fixed-n-degree-dist} shows the simulated raw degree distributions for $N=10^6$ and different $m$. The fat tail was reduced by taking the average of multiple simulations. Already, we can see that it does not follow a power law. After log binning, it follows the theoretical geometric simulation very well for small $k$, as can be seen in \autoref{fig:ra-fixed-n-logbin}.
 
 \begin{figure}
     \centering
@@ -66,7 +66,7 @@ Numerical simulations confirmed that growth alone is not sufficient to produce a
     \label{fig:ra-fixed-n-logbin}
 \end{figure}
 
-Goodness of fit was tested in the same way as in the previous section. When tested against the null hypothesis of a geometric distribution governed by \autoref{eq:p-infinity-solution-ra} p-values obtained are listed below, showing that it is plausible that the simulated data follow the theoretical distribution. While the $p$-values fluctuate between 0.4 and 0.7, they are all safely above the threshold of $0.1$. 
+Goodness of fit was tested in the same way as in the previous section. $p$-values obtained from testing against the null hypothesis of a geometric distribution governed by \autoref{eq:p-infinity-solution-ra} are listed below, showing that it is plausible that the simulated data follow the theoretical distribution. While the $p$-values fluctuate between 0.4 and 0.7, they are all safely above the threshold of $0.1$. 
 
 \begin{center}
 \begin{tabular}{ c | c }
@@ -82,17 +82,17 @@ m & $p$-value \\
 \captionof{table}{The list of $p$-values for each $m$ for random attachment when compared with synthetic datasets.}
 \end{center}
 
-To demonstrate whether this test is effective, random attachment simulation data was also tested against the power law distribution, and we obtained result of $p = 0$, to an accuracy of $\pm 0.05$, for all $m$. This shows that we can reject the power law hypothesis as expected. 
+To demonstrate the test's effectiveness, random attachment simulation data was also tested against the power law distribution, and we obtained result of $p = 0$, to an accuracy of $\pm 0.05$, for all $m$. This shows that we can reject the power law hypothesis, as expected. 
 
 \subsection{Largest expected degree: Theory}\label{subsection:largest-expected-degree}
-Using the same definition from the previous section for largest expected degree, we need
+To calculate the largest expected degree, we need
 
 \begin{equation}
 	N \sum_{k=k_1}^\infty p_{\infty}(k) = N \sum_{k=k_1}^\infty \frac{1}{m+1} \left (\frac{m}{m+1} \right )^{k-m} = 1.
 	\label{eq:largest-expected-degree-ra-criteria}
 \end{equation}
 
-Again, the summation is similar to the previous \autoref{eq:ra-geom-series} just with a different lower limit. Applying the geometric series summation formula to the terms in the summation, we get 
+The summation is similar to the previous \autoref{eq:ra-geom-series} with a different lower limit. Applying the geometric series summation formula to the terms in the summation, we get 
 \begin{equation}
 	\frac{N}{m+1} \left ( \frac{m}{m+1} \right )^{k_1 - m} \frac{1}{1 - (m / (m+1))} = 1
 \end{equation}
@@ -105,7 +105,7 @@ Rearranging this and taking logarithm of both sides, we obtain an expression for
 From this, we know that the largest degree grow logarithmically with $N$, as opposed to a power law like for preferential attachment. 
 
 \subsection{Largest expected degree: Numerical analysis}
-The numerical largest degree was calculated in the same way as described in the previous section. Figure ?? shows the discrepancy between the numerical and theoretical largest degree. The ratio between $k_1^{\text{theory}}$ and $k_1^{\text{numerical}}$ is largely constant. From \autoref{fig:ra-numerical-theoretical-k1} we can see that the difference between the numerical and theoretical values decrease as $N$ increases, which is expected. 
+The numerical largest degree was calculated in the same way as described in the previous section. The ratio between $k_1^{\text{theory}}$ and $k_1^{\text{numerical}}$ is largely constant. From \autoref{fig:ra-numerical-theoretical-k1} we can see that the difference between the numerical and theoretical values decrease as $N$ increases, as expected. 
 
 \begin{figure}
     \centering
@@ -114,7 +114,7 @@ The numerical largest degree was calculated in the same way as described in the 
     \label{fig:ra-numerical-theoretical-k1}
 \end{figure}
 
-From the following tables of values, we can also see that the values get closer to 1 for larger $N$. Similarly, the standard error was estimated from the sample standard deviation, governed by \autoref{eq:population-std}. 
+From the following tables of values, we can also see that the values get closer to 1 for larger $N$. Similarly, the standard error was estimated from the sample standard deviation. 
 
 \begin{center}
 \begin{tabular}{ ||c | c | c | c ||}
