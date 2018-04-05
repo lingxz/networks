@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex main"] 1490576656 "main.aux" "main.bbl" "main" 1490576672
+["bibtex main"] 1490576656 "main.aux" "main.bbl" "main" 1490577072
   "c:/texlive/2016/texmf-dist/bibtex/bst/biblatex/biblatex.bst" 1486057354 63002 075c3f13314e99e71e6ff0a472a98980 ""
   "library.bib" 1489358375 99573 ff21008d7250b30f7056b969c93753bc ""
-  "main-blx.bib" 1490576666 306 c590f5e4e60ccc2cb47668fe0ed30752 ""
-  "main.aux" 1490576672 16901 b18f735499aa27a8235bebef40132d53 ""
+  "main-blx.bib" 1490577064 306 c590f5e4e60ccc2cb47668fe0ed30752 ""
+  "main.aux" 1490577071 16901 b18f735499aa27a8235bebef40132d53 ""
   (generated)
-  "main.blg"
   "main.bbl"
-["pdflatex"] 1490576665 "main.tex" "main.pdf" "main" 1490576672
+  "main.blg"
+["pdflatex"] 1490577063 "main.tex" "main.pdf" "main" 1490577072
   "c:/texlive/2016/texmf-dist/fonts/map/fontname/texfonts.map" 1486057581 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "c:/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1486057296 1004 54797486969f23fa377b128694d548df ""
   "c:/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1486057296 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -120,10 +120,10 @@
   "img/ra-fixed-n-logbin.png" 1490375000 228840 179a35b8ca2fe3d13cd9007c9ec547e6 ""
   "img/ra-numerical-theoretical-k1.png" 1490375044 57555 7487eda406bf0e71e5cd46908132bec3 ""
   "img/rw-fixed-n-degree-dist.png" 1490375484 228933 45c9fe2f753827b868e38a98a59dd888 ""
-  "main.aux" 1490576672 16901 b18f735499aa27a8235bebef40132d53 ""
+  "main.aux" 1490577071 16901 b18f735499aa27a8235bebef40132d53 ""
   "main.bbl" 1490576657 20921 b1ccb663d55427fd77c52e8805947a12 "bibtex main"
-  "main.out" 1490576672 1126 d1bafc1d86e3f2e62fd5702f6021636a ""
-  "main.run.xml" 1490576672 2559 cd9b077981da913bc4e9f93ca702e22b ""
+  "main.out" 1490577071 1126 d1bafc1d86e3f2e62fd5702f6021636a ""
+  "main.run.xml" 1490577071 2559 cd9b077981da913bc4e9f93ca702e22b ""
   "main.tex" 1490379649 1313 de8e702c6a19f0626e03619ad629a9fb ""
   "preamble.tex" 1489172386 1665 b6b0f09d8c8dd96d3e2fb02051bd4fcb ""
   "sections/conclusion.tex" 1490379637 403 ccdebb88ec734ffb018a222a0315129e ""
@@ -132,9 +132,9 @@
   "sections/pra.tex" 1490569004 7492 c71ac1efef6bad99bc17e6c64a997788 ""
   "sections/rw.tex" 1490569118 3970 d256441e6303eb6dcfc417b4bcc3e9f6 ""
   (generated)
-  "main.log"
-  "main.run.xml"
-  "main-blx.bib"
   "main.out"
+  "main.log"
   "main.aux"
+  "main.run.xml"
   "main.pdf"
+  "main-blx.bib"
